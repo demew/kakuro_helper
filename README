@@ -1,0 +1,9 @@
+Current usage is just init_kakuro_db.bash which requires that the user has placed their db credentials in the code (ideally it would be abstracted out to a file).  End result is a database populated with kakuro combos.  There is no other functionality (yet).
+
+In its final stage this would be a command-line app / web app that helps me out when playing kakuro, a logic game similar to Sudoku (see www.conceptispuzzles.com/index.aspx?uri=puzzle/kakuro).  
+
+Basically, given a number of empty squares (1 to 9) and a sum (3 to 45), how many unique combinations of numbers amounting to those squares can create the given sum?  On the edge cases, 1+2 = 3, and so any 2-square section with a 3 can only be filled with those two numbers.  And 1+2+3+4+5+6+7+8+9=45, and so you know that each of the 9 available numbers will appear once in that sum.  But there are is tons of room in the middle where there are several different unique combinations available.  If you have a sum that's in the midrange and uses 3 or 4 squares, you may have several options to fill with, but you can reduce those options if you know what one of the numbers used is.
+
+I'd work on kakuros and find areas where I needed a "hint" and digging up combo tables online was really ineffective and slow.  I thought it would be great to have a command line / web app where I could provide the number of squares, the sum, and any numbers I had already figured out, and the script, in return, could give me the combos I had available to me.
+
+All I developed so far was the code to generate all of these combos and stuff them in a database.  There's a decent argument for making this all database-independent and dynamically generating the combos on any call instead, but I hadn't made the algorithmic leap yet when I last shelved the project.  I assume I'll re-start it and develop it further once I'm on my next kakuro kick. 
